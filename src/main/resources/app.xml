@@ -8,7 +8,7 @@
 
                 <adapter name="DemoAdapter" endpoints="tcp -h 127.0.0.1">
                     <object identity="SimplePrinter" type="::Demo::Printer" />
-                    <!--<object identity="DemoService" type="::Demo::DemoService" />-->
+                    <object identity="DemoService" type="::Demo::DemoService" />
                 </adapter>
             </server>
         </node>

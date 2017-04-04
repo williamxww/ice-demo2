@@ -1,5 +1,6 @@
 package com.bow.server;
 
+import com.bow.service.DemoServiceImpl;
 import com.bow.service.PrinterImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,15 +19,17 @@ public class DemoServer extends Ice.Application {
             return 1;
         }
 
-        // create identity & servant
-        Ice.Identity id = communicator().stringToIdentity("SimplePrinter");
-        LOGGER.info("Ice.Identity id =" + communicator().identityToString(id));
-        LOGGER.info("+++");
-        Ice.Object servant = new PrinterImpl();
-
-        // assemble with adapter
+        // assemble adapter
         Ice.ObjectAdapter adapter = communicator().createObjectAdapter("DemoAdapter");
-        adapter.add(servant, id);
+
+        // create identity & servant
+        Ice.Object printerServant = new PrinterImpl();
+        adapter.add(printerServant, communicator().stringToIdentity("SimplePrinter"));
+
+        Ice.Object demoServant = new DemoServiceImpl();
+        adapter.add(demoServant, communicator().stringToIdentity("DemoService"));
+
+        // activate
         adapter.activate();
         communicator().waitForShutdown();
         return 0;
