@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<icegrid>
+    <application name="PrinterApplication">
+        <node name="node1">
+            <server id="PrinterServer" exe="java" activation="on-demand">
+                <option>com.bow.server.PrinterServer</option>
+                <env>CLASSPATH=D:\repository\ice-demo2\target\*</env>
+
+                <adapter name="PrinterAdapter" endpoints="tcp -h 127.0.0.1">
+                    <object identity="SimplePrinter" type="::Demo::Printer" />
+                </adapter>
+                <adapter name="DemoServiceAdapter" endpoints="tcp -h 127.0.0.1">
+                    <object identity="DemoService" type="::Demo::DemoService" />
+                </adapter>
+            </server>
+        </node>
+
+        <!-- 部署的时候可以用java -jar的形式启动
+        <node name="node1">
+            <server id="PrinterServer" exe="java" activation="on-demand">
+                <adapter name="PrinterAdapter" endpoints="tcp -h 127.0.0.1">
+                    <object identity="SimplePrinter" type="::Demo::Printer" property="Identity"/>
+                </adapter>
+                <option>-jar</option>
+                <option>D:\repository\ice-demo2\target\ice-demo2-1.0-SNAPSHOT.jar</option>
+                <property name="Ice.Trace.Network" value="1"/>
+                <properties>
+                    <property name="Ice.ThreadPool.Server.SizeMax" value="1" />
+                </properties>
+                <property name="IceMX.Metrics.Debug.GroupBy" value="id"/>
+                <property name="IceMX.Metrics.Debug.Disabled" value="1"/>
+                <property name="IceMX.Metrics.ByParent.GroupBy" value="parent"/>
+                <property name="IceMX.Metrics.ByParent.Disabled" value="1"/>
+            </server>
+        </node>
+        -->
+    </application>
+</icegrid>
