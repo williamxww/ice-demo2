@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <icegrid>
-    <application name="PrinterApplication">
+    <application name="DemoApplication">
         <node name="node1">
-            <server id="PrinterServer" exe="java" activation="on-demand">
-                <option>com.bow.server.PrinterServer</option>
+            <server id="DemoServer" exe="java" activation="on-demand">
+                <option>com.bow.server.DemoServer</option>
                 <env>CLASSPATH=D:\repository\ice-demo2\target\*</env>
 
-                <adapter name="PrinterAdapter" endpoints="tcp -h 127.0.0.1">
+                <adapter name="DemoAdapter" endpoints="tcp -h 127.0.0.1">
                     <object identity="SimplePrinter" type="::Demo::Printer" />
-                </adapter>
-                <adapter name="DemoServiceAdapter" endpoints="tcp -h 127.0.0.1">
-                    <object identity="DemoService" type="::Demo::DemoService" />
+                    <!--<object identity="DemoService" type="::Demo::DemoService" />-->
                 </adapter>
             </server>
         </node>

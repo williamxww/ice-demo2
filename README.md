@@ -1,5 +1,4 @@
 #ice-demo2
-
 ===============
 
 content:
@@ -35,3 +34,7 @@ icegridadmin --Ice.Config=D:\repository\ice-demo2\src\main\resources\registry.cf
 application add D:\repository\ice-demo2\src\main\resources\app.xml
 application list
 server start PrinterServer
+
+
+常见问题：
+如果报找不到主类，首先检查class是否存在，然后检查target下依赖包lib生成没有，若没有则运行一下 mvn package，使其生成。
