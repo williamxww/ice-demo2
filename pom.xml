@@ -59,21 +59,21 @@
             <artifactId>ice</artifactId>
             <version>${ice_version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.zeroc</groupId>
-            <artifactId>icebox</artifactId>
-            <version>${ice_version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zeroc</groupId>
-            <artifactId>icegrid</artifactId>
-            <version>${ice_version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zeroc</groupId>
-            <artifactId>glacier2</artifactId>
-            <version>${ice_version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.zeroc</groupId>-->
+            <!--<artifactId>icebox</artifactId>-->
+            <!--<version>${ice_version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.zeroc</groupId>-->
+            <!--<artifactId>icegrid</artifactId>-->
+            <!--<version>${ice_version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.zeroc</groupId>-->
+            <!--<artifactId>glacier2</artifactId>-->
+            <!--<version>${ice_version}</version>-->
+        <!--</dependency>-->
 
 
     </dependencies>
