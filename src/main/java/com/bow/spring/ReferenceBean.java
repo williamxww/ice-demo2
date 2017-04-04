@@ -77,13 +77,4 @@ public class ReferenceBean extends ReferenceConfig implements FactoryBean, Initi
         String interfaceName = StringUtils.arrayToDelimitedString(tokens, DOT);
         return interfaceName;
     }
-
-    public static void main(String[] args) {
-        String type = "::Demo::DemoService";
-        String[] tokens = StringUtils.tokenizeToStringArray(type, "::");
-        for (String s : tokens) {
-            System.out.println(s);
-        }
-        System.out.println();
-    }
 }
