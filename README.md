@@ -1,4 +1,4 @@
-#ice-demo2
+ice-demo2
 ===============
 
 content:

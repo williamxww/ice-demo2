@@ -1,4 +1,21 @@
-module Demo {  
+#ifndef PRINTER_ICE
+#define PRINTER_ICE
+
+module Demo {
+
+    const int codeSuccess = 0;     /** SUCCESS **/
+    const int codeFail = -1;       /** FAIL **/
+
+    struct Request{
+        long requestId;
+        string body;
+    };
+
+    struct Response{
+        long responseId;
+        string body;
+    };
+
     interface Printer  
     {  
         void printString(string s);  
@@ -7,6 +24,10 @@ module Demo {
     interface DemoService{
         void say(string s);
         int calculate(int a, int b);
+        Response call(Request request);
     };
 
 };
+
+
+#endif

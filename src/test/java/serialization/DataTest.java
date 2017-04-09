@@ -15,7 +15,11 @@ import java.io.ObjectOutputStream;
 public class DataTest {
 
     /**
-     * 参考{@link Data1}分析序列化后的字节码
+     * 参考{@link Data1}分析序列化后的字节码<br/>
+     *
+     * 将对象实例相关的类元数据输出。<br/>
+     * 递归地输出类的超类描述直到不再有超类。<br/>
+     * 类元数据完了以后，开始从最顶层的超类开始输出对象实例的实际数据值。<br/>
      * 
      * @throws IOException
      */
