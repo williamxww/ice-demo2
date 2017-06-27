@@ -6,3 +6,4 @@ target/*
 .idea/*
 *.iml
 *.class
+ice/generated/*
