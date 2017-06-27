@@ -105,8 +105,10 @@
                             <target name="slice2java">
                                 <taskdef name="slice2java" classname="Slice2JavaTask"
                                          classpathref="maven.plugin.classpath" />
-                                <slice2java outputdir="ice/generated">
-                                    <fileset dir="ice/slice" includes="*.ice" />
+                                <!-- includePath+ ice文件中#include"文件路径"就是完整的被包含的ice路径 -->
+                                <slice2java outputdir="ice/generated" includePath="./ice/slice">
+                                    <!-- 所有的ice文件都在fileset下 -->
+                                    <fileset dir="ice/slice" />
                                 </slice2java>
                             </target>
                         </configuration>

@@ -8,8 +8,15 @@ content:
 
 ##常用命令
 
-slice2java --output-dir ../generated  HelloWorld.ice
+slice2java --output-dir ../generated  ./demo/Printer.ice
 
+
+在slice文件夹下执行：
+slice2java --output-dir ../generated -I. -ID:\CFile\ZeroC\Ice-3.6.3\slice ./demo/Printer.ice ./demo/Show.ice
+-I指定的路径 + ice文件中#include的路径 = 被包含的ice文件的完整路径 ，在pom里面配置了slice2java的includePath属性
+
+--ice
+Permit use of the reserved Ice prefix in Slice identifiers. This is useful when building Ice itself, or when compiling a Slice file that includes another Slice file with Ice-prefixed identifiers, such as Ice/BuiltinSequences.ice.
 
 启动server（最好用IDE启动）
 java IceBox.Server --Ice.Config=config.properties

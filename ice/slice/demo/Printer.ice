@@ -1,6 +1,9 @@
 #ifndef PRINTER_ICE
 #define PRINTER_ICE
 
+/** #include <Ice/BuiltinSequences.ice> **/
+#include "demo/Show.ice"
+
 module Demo {
 
     const int codeSuccess = 0;     /** SUCCESS **/
